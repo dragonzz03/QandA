@@ -1,0 +1,27 @@
+<div class="input-group mb-3 d-grid gap-3">
+  <button class="btn btn-danger mt-5 mx-auto btn-game" id="gameBtn" type="button" style="width: 200px;" >Start</button>
+  <button class="btn btn-primary mt-2 mx-auto btn-addQuestion" id="addQuestionBtn" type="button" style="width: 200px;" >Add question</button>
+  <button class="btn btn-primary mt-2 mx-auto btn-board" id="boardBtn" type="button" style="width: 200px;">Board</button>
+  <button class="btn btn-primary mt-2 mx-auto btn-aboutUs"  id="aboutUsBtn"type="button" style="width: 200px;">About Us</button>
+</div>
+<form name="Hidden-Submission-Form"></form>
+<script>
+  var submitForm = document.forms['Hidden-Submission-Form'];
+  gameBtn.onclick = function(){
+  submitForm.action = '/game/';
+  submitForm.submit();
+}
+  addQuestionBtn.onclick = function(){
+  submitForm.action = '/addQuestion/';
+  submitForm.method = 'POST';
+  submitForm.submit();
+}
+  boardBtn.onclick = function(){
+  submitForm.action = '/board/';
+  submitForm.submit();
+}
+  aboutUsBtn.onclick = function(){
+  submitForm.action = '/aboutUs/';
+  submitForm.submit();
+}
+</script>
