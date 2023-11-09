@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Highest score achieved</th>
+        </tr>
+    </thead>
+    {{#each board}}
+    <tbody>
+        <tr>
+            <td>{{sum @index 1}}</td>
+            <td><img src="{{this.image}}" alt="..." class="user-avt"></td>
+            <td>{{this.name}}</td>
+            <td>{{this.ath}}</td>
+        </tr>
+    </tbody>
+    {{/each}}
+
+</table>

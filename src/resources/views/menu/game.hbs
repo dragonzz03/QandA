@@ -1,6 +1,13 @@
-<div class="input-group mb-3 mt-5 d-grid gap-3">
-        <button class="btn btn-outline-secondary mt-3 border" type="button" id="button-addon1">Button</button>
-        <button class="btn btn-outline-secondary mt-3 border" type="button" id="button-addon1">Button</button>
-        <button class="btn btn-outline-secondary mt-3 border" type="button" id="button-addon1">Button</button>
-        <button class="btn btn-outline-secondary mt-3 border" type="button" id="button-addon1">Button</button>
-</div>
+<form action="processingFlow/{{question._id}}" method="GET">
+        {{#if question.question}}
+                <div class="input-group mb-3 mt-5 d-grid gap-3">
+                        <p class="text-start">Question: {{sum session.numberofQuestion 1}}</p>
+                        <p class="text-center">{{question.question}}</p>
+                        <p class="text-end">Author: {{question.author}}</p>
+                        <button class="btn btn-outline-secondary mt-3 border" type="submit" value="1" name="ans" id="button-addon1">{{question.answer1}}</button>
+                        <button class="btn btn-outline-secondary mt-3 border" type="submit" value="2" name="ans" id="button-addon1">{{question.answer2}}</button>
+                        <button class="btn btn-outline-secondary mt-3 border" type="submit" value="3" name="ans" id="button-addon1">{{question.answer3}}</button>
+                        <button class="btn btn-outline-secondary mt-3 border" type="submit" value="4" name="ans" id="button-addon1">{{question.answer4}}</button>
+                </div>
+        {{/if}}
+</form>

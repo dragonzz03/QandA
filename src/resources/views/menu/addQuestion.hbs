@@ -1,0 +1,48 @@
+
+<form action="addQuestionprocess" method="POST">
+  <label for="question" class="form-label mt-5">Write your question</label><br>
+  <div class="form-floating mb-3">
+    {{!-- <input type="text" id="question" class="form-control mb-3" name="question" placeholder="Write your question here"> --}}
+    <textarea class="form-control" placeholder="Leave a comment here" id="question" name="question" style="height: 100px"></textarea>
+    <label for="question">Write your question here</label>
+  </div>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control mb-3" name="answer1" placeholder="Answer 1">
+  </div>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control mb-3" name="answer2" placeholder="Answer 2">
+  </div>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control mb-3" name="answer3" placeholder="Answer 3">
+  </div>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control mb-3" name="answer4" placeholder="Answer 4">
+  </div>
+  <div class="mb-3">
+    <label for="type" class="form-label">Choose true answer</label>
+    <select id="selectAnswer" class="form-select" aria-label="Default select example" onchange="updateinput();">
+      <optgroup label="Please choose your true answer">
+      <option value="1">A</option>
+      <option value="2">B</option>
+      <option value="3">C</option>
+      <option value="4">D</option>
+      </optgroup>
+    </select>
+    <input type="hidden" name="trueAnswer" id="typeInput" value="1">
+  </div>
+  <label for="trueanswer" class="form-label">Explain</label>
+  <div class="form-floating mb-3">
+    {{!-- <input type="text" class="form-control mb-3" name="explain" placeholder="Explain your answer" aria-label="trueanswer"> --}}
+    <textarea class="form-control" placeholder="Explain your answer" id="explain" name="explain" style="height: 100px"></textarea>
+    <label for="explain">Explain your answer</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Add question</button>
+
+</form>
+<script type="text/javascript">
+  function updateinput(){
+    var e = document.getElementById("selectAnswer");
+    var Selected = e.options[e.selectedIndex].value;
+    document.getElementById("typeInput").value=Selected;
+  }
+</script>   

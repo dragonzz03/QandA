@@ -1,0 +1,29 @@
+
+<div class="container mt-5">
+    <p class="text-center">
+        {{explain}}
+    </p>
+    <p class="text-center">
+        {{pointsAchieved}}
+    </p>
+    <div class="position-relative">
+        <a class="btn btn-primary" 
+            href="/" 
+            role="button">
+            {{backButton}}
+        </a>
+        {{#unless session.idUser}}
+            <a class="btn btn-primary" 
+                href="{{signInPath}}" 
+                role="button" 
+                style="display: {{display}};">
+                {{signInBtn}}
+            </a>
+        {{/unless}}
+        <a class="btn btn-primary position-absolute top-50 start-100 translate-middle" 
+            href="/game/{{nextPatchBth}}" 
+            role="button">
+            {{nextButton}}
+            </a>
+    </div>
+</div>
